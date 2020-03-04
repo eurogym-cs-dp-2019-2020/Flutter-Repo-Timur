@@ -8,7 +8,7 @@ class WorldTime {
   String flag;      //Url to flag icon
   String url;       //Location url for api endpoint
 
-}
+
 
 WorldTime ({ this.location, this.flag, this.url });
 
@@ -29,4 +29,4 @@ Future <void> getTime() async {
       
       time = now.toString(); //set time property
   }
-
+}
