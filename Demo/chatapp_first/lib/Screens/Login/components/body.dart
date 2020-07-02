@@ -12,6 +12,8 @@ class Body extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
+  void validateAndSave() {}
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
