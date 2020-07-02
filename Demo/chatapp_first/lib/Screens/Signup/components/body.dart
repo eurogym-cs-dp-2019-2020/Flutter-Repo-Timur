@@ -1,3 +1,4 @@
+import 'package:chatapp_first/Screens/Onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:chatapp_first/Screens/Login/login_screen.dart';
 import 'package:chatapp_first/Screens/Signup/components/background.dart';
@@ -36,7 +37,16 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "SIGNUP",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return OnboardingPage();
+                    }
+                  )
+                );
+              },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(

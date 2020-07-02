@@ -27,19 +27,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
               children: <Widget>[
                 _buildPageContent(
                     isShowImageOnTop: false,
+                    image: 'assets/images/onboarding1.png',
                     body:
                         'Browse the menu and choose a topic for your chat room',
                     color: Color(0xFF903e94)),
                 _buildPageContent(
                     isShowImageOnTop: true,
+                    image: 'assets/images/onboarding1.png',
                     body:
-                        'Make sure the topic you want is selected and click START',
+                        'Make sure the topic you want is selected and click "Create"',
                     color: Color(0xFF6F35A5)),
                 _buildPageContent(
                     isShowImageOnTop: false,
+                    image: 'assets/images/onboarding1.png',
                     body:
                         'Wait for a person to join and enjoy your conversation',
-                    color: Color(0xFFF1E6FF))
+                    color: Color(0xFF69326e))
               ],
             ),
             Positioned(
