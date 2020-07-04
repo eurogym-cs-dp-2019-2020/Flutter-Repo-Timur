@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:chatapp_first/Screens/Selection/selection_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -87,7 +88,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           ),
                         if (_currentPage == 2)
                           InkWell(
-                            onTap: () => print('Get Started Now'),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => MainScreen()),
+                              );
+                            },
                             child: Container(
                               height: Platform.isIOS ? 70 : 60,
                               alignment: Alignment.center,
