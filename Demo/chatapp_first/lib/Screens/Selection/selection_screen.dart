@@ -1,7 +1,19 @@
+import 'package:chatapp_first/Screens/Selection/topic_carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:chatapp_first/constants.dart';
+import 'dart:math' as math;
+import 'package:chatapp_first/models/topic.dart';
+import 'topic_card.dart';
+// import '../../components/topic_card.dart';
+// import 'components/health.dart';
+// import 'components/soc_pol.dart';
+// import 'components/technology.dart';
 
 var screens = [ChatScreen(), HomeScreen(), ExploreScreen()];
+// TODO: decide what to do with the screens
+
 
 class MainScreen extends StatefulWidget { 
   @override
@@ -26,12 +38,10 @@ class _MainScreenState extends State<MainScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
-                        icon: Icon(
-                          MdiIcons.bellOutline,
-                          color: Colors.white,
-                          size: 25,
+                        padding: EdgeInsets.only(left: kDefaultPadding),
+                        icon: SvgPicture.asset("assets/icons/menu.svg"),
+                        onPressed: () {},
                         ),
-                        onPressed: () {}),
                     Row(
                       children: <Widget>[
                         SizedBox(
@@ -95,25 +105,16 @@ class _MainScreenState extends State<MainScreen> {
 }
 
 class HomeScreen extends StatelessWidget {
-  final debateImages = ["apex", "destiny", "fc3", "mk11"];
-  final debateFiles = ["soc_pol", "edu", "health", "technology"];
-
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-      child: GridView.count(
-        crossAxisCount: 2,
-        childAspectRatio: 3 / 4,
-        children: List.generate(debateImages.length, (index) {
-          return GestureDetector(
-            onTap: () {},
-            child: Image.asset("assets/images/${debateImages[index]}.jpg", fit: BoxFit.cover),
-          );
-        }),
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          SizedBox(height: kDefaultPadding),
+          TopicCarousel(),
+        ],
       ),
-    ));
+    );
   }
 }
 // TODO: Change variable names
@@ -127,6 +128,10 @@ class ChatScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
 
 class ExploreScreen extends StatelessWidget {
   // TODO: Change previews
